@@ -1,7 +1,12 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import regeneratorRuntime from "regenerator-runtime";
+import FetchData from './FetchData'
+
 
 export function App () {
-  return (
-    <h1 style={{margin: '1vw'}}>building a simple UI for daily covid-19 statistics...</h1>
-  )
+    return (
+      <div>
+        <FetchData />
+      </div>
+    );
 }
