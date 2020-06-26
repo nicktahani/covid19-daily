@@ -47,7 +47,7 @@ const FetchData = () => {
           <br/>
 
           Last updated: {moment(new Date(data.updated)).format('dddd, MMMM Do, YYYY h:mm:ss A')}
-          <Card todaysData={data}/>
+          <Card dailyNumbers={data}/>
         </React.Fragment>
       }
     </div>
