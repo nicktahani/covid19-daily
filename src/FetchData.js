@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import Card from './Card'
-import * as moment from 'moment'
+import Title from './Title'
+
 
 const FetchData = () => {
   const [errors, setErrors] = useState(false)
   const [data, setData] = useState(null)
   const [isLoading, setIsLoading] = useState(true)
+
 
   useEffect(() => {
     async function fetchData() {
@@ -28,27 +30,20 @@ const FetchData = () => {
     fetchData()
   }, [])
 
+  console.log(data)
+
   if (isLoading) {
     return <div>Loading...</div>
   }
 
   return (
-    <div>
+    <div className='wrapper'>
+      {/* if data &&  (in other words...if the data exists)*/}
       {data &&
-        <React.Fragment>
-          <div>
-            {Object.keys(data).map((key, i) => (
-              <li key={i}>
-                <span><b>{key}</b>: {data[key]}</span>
-              </li>
-            ))}
-          </div>
-        
-          <br/>
-
-          Last updated: {moment(new Date(data.updated)).format('dddd, MMMM Do, YYYY h:mm:ss A')}
+        <>
+          <Title lastUpdate={data} />
           <Card dailyNumbers={data}/>
-        </React.Fragment>
+        </>
       }
     </div>
   )

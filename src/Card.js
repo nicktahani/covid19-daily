@@ -1,13 +1,12 @@
 import React from 'react'
 
-// I realize the way i'm bringing in the data below is not ideal
+// I realize the way i'm bringing in the data below is not ideal,
 // but since the data is just a single object in this case, it'll suffice 
 
 const Card = ({ dailyNumbers }) => {
   const { todayCases, todayDeaths, todayRecovered } = dailyNumbers
   return (
     <div className='cards'>
-      {/* if data &&  */}
       {dailyNumbers && 
         <div>
           <h1>Cases: {todayCases.toLocaleString()}</h1>
