@@ -1,22 +1,44 @@
 import React from 'react'
 import * as moment from 'moment'
+import styled from 'styled-components'
+
+const TitleContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+`
+
+const HeadingContainer = styled.div`
+  font-weight: bold;
+  font-size: 4.5em;
+`
+
+const UpdatedContainer = styled.div`
+  font-size: 1.5em;
+  color: #39ff14;
+`
 
 const Title = ({ lastUpdate }) => {
   const { updated } = lastUpdate
 
   return (
-    <div className='title-wrapper'>
-      {lastUpdate &&
-        <>
-          <div id='title'>
-            <h1>Daily Global COVID-19 Numbers</h1>
-          </div>
-          <div>
-          Last updated: {moment(new Date(updated)).format('L h:mm:ss A')}
-          </div>
-        </>
-      }
-    </div>
+    <TitleContainer>
+        {lastUpdate &&
+          <>
+            <HeadingContainer>
+              <div id='title'>
+                <span>Global COVID-19</span>
+              </div>
+            </HeadingContainer>
+            <UpdatedContainer>
+              <div>
+                <span>Last updated: {moment(new Date(updated)).format('L h:mm:ss A')}</span>
+              </div>
+            </UpdatedContainer>
+          </>
+        }
+    </TitleContainer>
   )
 }
 

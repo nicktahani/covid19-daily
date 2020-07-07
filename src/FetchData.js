@@ -1,3 +1,5 @@
+// TODO: add a filter for daily or total numbers 
+
 import React, { useState, useEffect } from 'react'
 import Card from './Card'
 import Title from './Title'
