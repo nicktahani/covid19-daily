@@ -9,6 +9,7 @@ const FetchData = () => {
   const [errors, setErrors] = useState(false)
   const [data, setData] = useState(null)
   const [isLoading, setIsLoading] = useState(true)
+ 
 
 
   useEffect(() => {
@@ -21,6 +22,7 @@ const FetchData = () => {
         const covidData = await res.json()
         setIsLoading(false)
         setErrors(false)
+        console.log(covidData)
         setData(covidData)
       } catch (e) {
         setIsLoading(false)
@@ -32,8 +34,6 @@ const FetchData = () => {
     fetchData()
   }, [])
 
-  console.log(data)
-
   if (isLoading) {
     return <div>Loading...</div>
   }
@@ -44,7 +44,8 @@ const FetchData = () => {
       {data &&
         <>
           <Title lastUpdate={data} />
-          <Card dailyNumbers={data}/>
+          <Card dailyData={data}/>
+          
         </>
       }
     </div>

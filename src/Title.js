@@ -7,6 +7,7 @@ const TitleContainer = styled.div`
   flex-direction: column;
   align-items: center;
   text-align: center;
+  margin: 3em;
 `
 
 const HeadingContainer = styled.div`
@@ -24,20 +25,20 @@ const Title = ({ lastUpdate }) => {
 
   return (
     <TitleContainer>
-        {lastUpdate &&
-          <>
-            <HeadingContainer>
-              <div id='title'>
-                <span>Global COVID-19</span>
-              </div>
-            </HeadingContainer>
-            <UpdatedContainer>
-              <div>
-                <span>Last updated: {moment(new Date(updated)).format('L h:mm:ss A')}</span>
-              </div>
-            </UpdatedContainer>
-          </>
-        }
+      {lastUpdate &&
+        <>
+          <HeadingContainer>
+            <div id='title'>
+              <span>Global COVID-19</span>
+            </div>
+          </HeadingContainer>
+          <UpdatedContainer>
+            <div>
+              <span>Last updated: {moment(new Date(updated)).format('L h:mm:ss A')}</span>
+            </div>
+          </UpdatedContainer>
+        </>
+      }
     </TitleContainer>
   )
 }
