@@ -44,7 +44,7 @@ const FetchData = () => {
       {data &&
         <>
           <Title lastUpdate={data} />
-          <Card dailyData={data}/>
+          <Card cardData={data}/>
           
         </>
       }
