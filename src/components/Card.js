@@ -1,4 +1,3 @@
-// *************** NOT BEING USED ******************
 import React, { useState } from 'react'
 import Button from './Button'
 import styled from 'styled-components' 
