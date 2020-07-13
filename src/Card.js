@@ -1,26 +1,26 @@
+// *************** NOT BEING USED ******************
 import React, { useState } from 'react'
-import styled from 'styled-components'
 import Button from './Button'
+import styled from 'styled-components' 
 import DailyCovid from './DailyCovid'
+import TotalCovid from './TotalCovid' 
 
-// I realize the way i'm bringing in the data below is not ideal,
-// but since the data is just a single object in this case, it'll suffice 
-
-const CardContainer = styled.div`
+const DataContainer = styled.div`
   display: flex;
   justify-content: space-evenly;
   margin: 3em;
-
 `
 
 const Card = ({ cardData }) => {
-  
-  
+  const [showResults, setShowResults] = useState(true)
+
   return (
-    <CardContainer> 
-      <DailyCovid dailyData={cardData} />
-      <Button /> 
-    </CardContainer>
+    <>
+      <DataContainer>
+        {showResults ? <DailyCovid dailyData={cardData}/> : <TotalCovid totalData={cardData}/>}
+      </DataContainer>
+      <Button toggle={() => setShowResults(!showResults)}/>
+    </>
   )
 }
 

@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 
-body {
+body, button {
   margin: 0;
   font-family: 'Oswald', sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -16,6 +16,11 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+/* remove button highlight on chrome*/
+*:focus {
+  outline: none;
 }
 
 

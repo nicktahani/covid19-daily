@@ -17,7 +17,7 @@ const HeadingContainer = styled.div`
 
 const UpdatedContainer = styled.div`
   font-size: 1.5em;
-  color: #39ff14;
+  color: #2ecc71;
 `
 
 const Title = ({ lastUpdate }) => {

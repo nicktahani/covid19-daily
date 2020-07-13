@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react'
 import Card from './Card'
 import Title from './Title'
+import Button from './Button'
 
 
 const FetchData = () => {
@@ -44,8 +45,7 @@ const FetchData = () => {
       {data &&
         <>
           <Title lastUpdate={data} />
-          <Card cardData={data}/>
-          
+          <Card cardData={data}/>    
         </>
       }
     </div>
