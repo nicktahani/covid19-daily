@@ -7,8 +7,6 @@ const FetchData = () => {
   const [data, setData] = useState(null)
   const [isLoading, setIsLoading] = useState(true)
  
-
-
   useEffect(() => {
     async function fetchData() {
       try {
@@ -41,7 +39,7 @@ const FetchData = () => {
       {data &&
         <>
           <Title lastUpdate={data} />
-          <Card cardData={data}/>    
+          <Card cardData={data} />    
         </>
       }
     </div>
