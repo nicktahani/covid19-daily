@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import Card from './Card'
 import Title from './Title'
+import Dropdown from './Dropdown';
 
 const FetchData = () => {
   const [errors, setErrors] = useState(false)
@@ -39,6 +40,7 @@ const FetchData = () => {
       {data &&
         <>
           <Title lastUpdate={data} />
+          <Dropdown />
           <Card cardData={data} />    
         </>
       }
