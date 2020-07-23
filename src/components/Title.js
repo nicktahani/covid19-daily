@@ -29,7 +29,7 @@ const Title = ({ lastUpdate }) => {
         <>
           <HeadingContainer>
             <div id='title'>
-              <span>Global COVID-19</span>
+              <span>COVID-19 in the United States</span>
             </div>
           </HeadingContainer>
           <UpdatedContainer>

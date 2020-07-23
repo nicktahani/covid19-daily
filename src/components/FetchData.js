@@ -3,15 +3,22 @@ import Card from './Card'
 import Title from './Title'
 import Dropdown from './Dropdown';
 
+const baseApiUrl = `https://disease.sh/v3/covid-19/states`
+
 const FetchData = () => {
   const [errors, setErrors] = useState(false)
   const [data, setData] = useState(null)
   const [isLoading, setIsLoading] = useState(true)
- 
+  const [location, setLocation] = useState('California') 
+  
+  const onSelectResult = result => {
+    setLocation(result)
+  }
+
   useEffect(() => {
     async function fetchData() {
       try {
-        const res = await fetch("https://corona.lmao.ninja/v2/all")
+        const res = await fetch(`${baseApiUrl}/${location}`)
         if (!res.ok) {
           throw Error(`Looks like there was a problem. Status Code: ${res.status}`)
         }
@@ -20,6 +27,7 @@ const FetchData = () => {
         setErrors(false)
         console.log(covidData)
         setData(covidData)
+        
       } catch (e) {
         setIsLoading(false)
         setErrors(e)
@@ -28,7 +36,7 @@ const FetchData = () => {
     }
 
     fetchData()
-  }, [])
+  }, [location])
 
   if (isLoading) {
     return <div>Loading...</div>
@@ -36,11 +44,10 @@ const FetchData = () => {
 
   return (
     <div className='wrapper'>
-      {/* if data &&  (in other words...if the data exists)*/}
       {data &&
         <>
           <Title lastUpdate={data} />
-          <Dropdown />
+          <Dropdown onSelectResult={onSelectResult} />
           <Card cardData={data} />    
         </>
       }

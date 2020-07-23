@@ -24,11 +24,6 @@ const DailyCovid = ({ dailyData }) => {
               Deaths: <span style={numStyle}>{todayDeaths.toLocaleString()}</span>
             </h1>
           </div>
-          <div>
-            <h1>
-              Recovered: <span style={numStyle}>{todayRecovered.toLocaleString()}</span>
-            </h1>
-          </div>
         </>
       }  
     </>

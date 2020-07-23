@@ -22,11 +22,6 @@ const TotalCovid = ({ totalData }) => {
               Deaths: <span style={numStyle}>{deaths.toLocaleString()}</span>
             </h1>
           </div>
-          <div>
-            <h1>
-              Recovered: <span style={numStyle}>{recovered.toLocaleString()}</span>
-            </h1>
-          </div>
         </>
       }  
     </>
