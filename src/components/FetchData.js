@@ -25,7 +25,7 @@ const FetchData = () => {
         const covidData = await res.json()
         setIsLoading(false)
         setErrors(false)
-        console.log(covidData)
+        // console.log(covidData)
         setData(covidData)
         
       } catch (e) {

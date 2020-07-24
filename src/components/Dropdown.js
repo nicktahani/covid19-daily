@@ -12,7 +12,7 @@ const Dropdown = ({ onSelectResult }) => {
   const [isLoading, setIsLoading] = useState(true)
 
   const handleSelectResult = e => {
-    console.log(e.target.value)
+    // console.log(e.target.value)
 
     const { value } = e.target
     if (value === selectedState) {
@@ -32,7 +32,7 @@ const Dropdown = ({ onSelectResult }) => {
         const statesData = await res.json()
         setIsLoading(false)
         setAllStates(statesData.map(({ state }) => state))
-        console.log(statesData)
+        // console.log(statesData)
       } catch {
         setIsLoading(false)
       }
