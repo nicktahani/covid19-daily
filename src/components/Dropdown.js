@@ -13,7 +13,6 @@ const Dropdown = ({ onSelectResult }) => {
 
   const handleSelectResult = e => {
     // console.log(e.target.value)
-
     const { value } = e.target
     if (value === selectedState) {
       return
@@ -54,7 +53,6 @@ const Dropdown = ({ onSelectResult }) => {
             <option 
               key={item}
               value={item} 
-              onClick={() => handleSelectResult(item)}
             >
               {item}
             </option>
