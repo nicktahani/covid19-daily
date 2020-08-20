@@ -46,7 +46,7 @@ const FetchData = () => {
     <div className='wrapper'>
       {data &&
         <>
-          <Title lastUpdate={data} />
+          <Title lastUpdate={data} location={location}/>
           <Dropdown onSelectResult={onSelectResult} />
           <Card cardData={data} />    
         </>

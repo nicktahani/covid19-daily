@@ -20,7 +20,7 @@ const UpdatedContainer = styled.div`
   color: #2ecc71;
 `
 
-const Title = ({ lastUpdate }) => {
+const Title = ({ lastUpdate, location }) => {
   const { updated } = lastUpdate
 
   return (
@@ -29,7 +29,7 @@ const Title = ({ lastUpdate }) => {
         <>
           <HeadingContainer>
             <div id='title'>
-              <span>COVID-19 in the United States</span>
+              <span>COVID-19 in {location}</span>
             </div>
           </HeadingContainer>
           <UpdatedContainer>
